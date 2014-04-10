@@ -1,0 +1,729 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>WebAPIから取得したデータをTableViewで画面表示 | Tistudy</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="h5y1m141">
+        <meta name="description" content="Book generated using GitBook">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../../TitaniumClassic/httpclient/appendix.html" />
+        
+        
+        <link rel="prev" href="../../TitaniumClassic/httpclient/webAPI.html" />
+        
+
+        <meta property="og:title" content="WebAPIから取得したデータをTableViewで画面表示 | Tistudy">
+        <meta property="og:site_name" content="Tistudy">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/h5y1m141">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="h5y1m141/tistudy" data-level="6.4">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/h5y1m141/tistudy" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/h5y1m141/tistudy/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/h5y1m141/tistudy/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../../README.html" >Tistudy</a></h1>
+</div>
+
+    <div class="book-summary">
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/h5y1m141" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/h5y1m141/tistudy/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/h5y1m141/tistudy/edit/master/TitaniumClassic/httpclient/withTableView.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0">
+            <a href="../../README.html"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1">
+                
+                <a href="../../learnJavaScript/README.html">
+                    <i class="fa fa-check"></i> <b>1)</b> JavaScript基礎
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1">
+                            
+                            <a href="../../learnJavaScript/variables.html">
+                                <i class="fa fa-check"></i> <b>1.1)</b> 変数について
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2">
+                            
+                            <a href="../../learnJavaScript/variablesJavaScript.html">
+                                <i class="fa fa-check"></i> <b>1.2)</b> JavaScriptでの変数について抑えておくポイント
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3">
+                            
+                            <a href="../../learnJavaScript/function.html">
+                                <i class="fa fa-check"></i> <b>1.3)</b> 関数編
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4">
+                            
+                            <a href="../../learnJavaScript/for.html">
+                                <i class="fa fa-check"></i> <b>1.4)</b> 制御文（for）
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5">
+                            
+                            <a href="../../learnJavaScript/if.html">
+                                <i class="fa fa-check"></i> <b>1.5)</b> 制御文（if）
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2">
+                
+                <a href="../../TitaniumClassic/README.html">
+                    <i class="fa fa-check"></i> <b>2)</b> Titanium Classic基礎
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="3">
+                
+                <a href="../../TitaniumClassic/eventlistener/README.html">
+                    <i class="fa fa-check"></i> <b>3)</b> イベントリスナーについて学ぶ
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="4">
+                
+                <a href="../../TitaniumClassic/tableview/README.html">
+                    <i class="fa fa-check"></i> <b>4)</b> TableViewの使い方について学ぶ
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1">
+                            
+                            <a href="../../TitaniumClassic/tableview/projectSetup.html">
+                                <i class="fa fa-check"></i> <b>4.1)</b> プロジェクト設定
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.2">
+                            
+                            <a href="../../TitaniumClassic/tableview/tableView.html">
+                                <i class="fa fa-check"></i> <b>4.2)</b> サンプルデータを表示させる
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="5">
+                
+                <a href="../../TitaniumClassic/webview/README.html">
+                    <i class="fa fa-check"></i> <b>5)</b> WebViewの使い方について学ぶ
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1">
+                            
+                            <a href="../../TitaniumClassic/webview/projectSetup.html">
+                                <i class="fa fa-check"></i> <b>5.1)</b> プロジェクト設定
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2">
+                            
+                            <a href="../../TitaniumClassic/webview/webView.html">
+                                <i class="fa fa-check"></i> <b>5.2)</b> WebViewを活用した簡易Webブラウザ開発
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="6">
+                
+                <a href="../../TitaniumClassic/httpclient/README.html">
+                    <i class="fa fa-check"></i> <b>6)</b> HTTPClientの使い方を学ぶ
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="6.1">
+                            
+                            <a href="../../TitaniumClassic/httpclient/projectSetup.html">
+                                <i class="fa fa-check"></i> <b>6.1)</b> プロジェクト設定
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.2">
+                            
+                            <a href="../../TitaniumClassic/httpclient/httpClient.html">
+                                <i class="fa fa-check"></i> <b>6.2)</b> Titanium Mobileの通信機能について
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.3">
+                            
+                            <a href="../../TitaniumClassic/httpclient/webAPI.html">
+                                <i class="fa fa-check"></i> <b>6.3)</b> WebAPIからデータのみ取得
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.4">
+                            
+                            <a href="../../TitaniumClassic/httpclient/withTableView.html">
+                                <i class="fa fa-check"></i> <b>6.4)</b> WebAPIから取得したデータをTableViewで画面表示
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.5">
+                            
+                            <a href="../../TitaniumClassic/httpclient/appendix.html">
+                                <i class="fa fa-check"></i> <b>6.5)</b> 参考情報
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="7">
+                
+                <a href="../../TitaniumClassic/acs/README.html">
+                    <i class="fa fa-check"></i> <b>7)</b> ACSと連携させた位置情報処理について学ぶ
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="7.1">
+                            
+                            <a href="../../TitaniumClassic/acs/projectsetup.html">
+                                <i class="fa fa-check"></i> <b>7.1)</b> プロジェクト設定
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.2">
+                            
+                            <a href="../../TitaniumClassic/acs/mapview.html">
+                                <i class="fa fa-check"></i> <b>7.2)</b> 位置情報処理に必須のMapViewの解説
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.3">
+                            
+                            <a href="../../TitaniumClassic/acs/mapviewwithACS.html">
+                                <i class="fa fa-check"></i> <b>7.3)</b> ACSとの連携
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.4">
+                            
+                            <a href="../../TitaniumClassic/acs/appendix.html">
+                                <i class="fa fa-check"></i> <b>7.4)</b> 参考情報
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="8">
+                
+                <a href="../../TitaniumClassicAdvance/README.html">
+                    <i class="fa fa-check"></i> <b>8)</b> Titanium Classic応用編
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="9">
+                
+                <a href="../../TitaniumClassicAdvance/fileSeparate/README.html">
+                    <i class="fa fa-check"></i> <b>9)</b> ソースコードの保守性をあげる工夫
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="9.1">
+                            
+                            <a href="../../TitaniumClassicAdvance/fileSeparate/howToSeparate.html">
+                                <i class="fa fa-check"></i> <b>9.1)</b> ファイルの分割方法
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="10">
+                
+                <a href="../../TitaniumClassicAdvance/tableViewTips/README.html">
+                    <i class="fa fa-check"></i> <b>10)</b> TableViewを一工夫して利用する
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="10.1">
+                            
+                            <a href="../../TitaniumClassicAdvance/tableViewTips/calendar.html">
+                                <i class="fa fa-check"></i> <b>10.1)</b> リスト形式の月間カレンダーのようなユーザインタフェースを実現する方法
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="10.2">
+                            
+                            <a href="../../TitaniumClassicAdvance/tableViewTips/collapse-or-expand-menu.html">
+                                <i class="fa fa-check"></i> <b>10.2)</b> メニュー一覧→サブメニューを展開するようなユーザインタフェースを実現する方法
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="10.3">
+                            
+                            <a href="../../TitaniumClassicAdvance/tableViewTips/no-separator.html">
+                                <i class="fa fa-check"></i> <b>10.3)</b> 区切り線を無くす方法
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="10.4">
+                            
+                            <a href="../../TitaniumClassicAdvance/tableViewTips/scroll-to-index.html">
+                                <i class="fa fa-check"></i> <b>10.4)</b> 画面遷移後に元のスクロール位置まで戻す方法
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="10.5">
+                            
+                            <a href="../../TitaniumClassicAdvance/tableViewTips/tableview-with-custom-data-and-search.html">
+                                <i class="fa fa-check"></i> <b>10.5)</b> 検索ボックスでマッチする値だけ表示する方法
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="11">
+                
+                <a href="../../TitaniumClassicAdvance/README.html">
+                    <i class="fa fa-check"></i> <b>11)</b> モジュール化
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="12">
+                
+                <a href="../../TitaniumClassicAdvance/README.html">
+                    <i class="fa fa-check"></i> <b>12)</b> CommonJSについて
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="13">
+                
+                <a href="../../README.html">
+                    <i class="fa fa-check"></i> <b>13)</b> Titanium Classic環境でも手軽に使えて開発効率があがるJavaScriptライブラリの紹介
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="page-wrapper">
+            <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 76.47058823529412%;min-width: 73.52941176470588%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../README.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../learnJavaScript/README.html" title="JavaScript基礎" class="chapter done new-chapter" data-progress="1" style="left: 2.9411764705882355%;"></a>
+    
+        <a href="../../learnJavaScript/variables.html" title="変数について" class="chapter done " data-progress="1.1" style="left: 5.882352941176471%;"></a>
+    
+        <a href="../../learnJavaScript/variablesJavaScript.html" title="JavaScriptでの変数について抑えておくポイント" class="chapter done " data-progress="1.2" style="left: 8.823529411764707%;"></a>
+    
+        <a href="../../learnJavaScript/function.html" title="関数編" class="chapter done " data-progress="1.3" style="left: 11.764705882352942%;"></a>
+    
+        <a href="../../learnJavaScript/for.html" title="制御文（for）" class="chapter done " data-progress="1.4" style="left: 14.705882352941176%;"></a>
+    
+        <a href="../../learnJavaScript/if.html" title="制御文（if）" class="chapter done " data-progress="1.5" style="left: 17.647058823529413%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/tableViewTips/README.html" title="TableViewを一工夫して利用する" class="chapter done " data-progress="10" style="left: 20.58823529411765%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/tableViewTips/calendar.html" title="リスト形式の月間カレンダーのようなユーザインタフェースを実現する方法" class="chapter done " data-progress="10.1" style="left: 23.529411764705884%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/tableViewTips/collapse-or-expand-menu.html" title="メニュー一覧→サブメニューを展開するようなユーザインタフェースを実現する方法" class="chapter done " data-progress="10.2" style="left: 26.470588235294116%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/tableViewTips/no-separator.html" title="区切り線を無くす方法" class="chapter done " data-progress="10.3" style="left: 29.41176470588235%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/tableViewTips/scroll-to-index.html" title="画面遷移後に元のスクロール位置まで戻す方法" class="chapter done " data-progress="10.4" style="left: 32.35294117647059%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/tableViewTips/tableview-with-custom-data-and-search.html" title="検索ボックスでマッチする値だけ表示する方法" class="chapter done " data-progress="10.5" style="left: 35.294117647058826%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/README.html" title="CommonJSについて" class="chapter done " data-progress="12" style="left: 38.23529411764706%;"></a>
+    
+        <a href="../../TitaniumClassic/README.html" title="Titanium Classic基礎" class="chapter done new-chapter" data-progress="2" style="left: 41.1764705882353%;"></a>
+    
+        <a href="../../TitaniumClassic/eventlistener/README.html" title="イベントリスナーについて学ぶ" class="chapter done new-chapter" data-progress="3" style="left: 44.11764705882353%;"></a>
+    
+        <a href="../../TitaniumClassic/tableview/README.html" title="TableViewの使い方について学ぶ" class="chapter done new-chapter" data-progress="4" style="left: 47.05882352941177%;"></a>
+    
+        <a href="../../TitaniumClassic/tableview/projectSetup.html" title="プロジェクト設定" class="chapter done " data-progress="4.1" style="left: 50%;"></a>
+    
+        <a href="../../TitaniumClassic/tableview/tableView.html" title="サンプルデータを表示させる" class="chapter done " data-progress="4.2" style="left: 52.94117647058823%;"></a>
+    
+        <a href="../../TitaniumClassic/webview/README.html" title="WebViewの使い方について学ぶ" class="chapter done new-chapter" data-progress="5" style="left: 55.88235294117647%;"></a>
+    
+        <a href="../../TitaniumClassic/webview/projectSetup.html" title="プロジェクト設定" class="chapter done " data-progress="5.1" style="left: 58.8235294117647%;"></a>
+    
+        <a href="../../TitaniumClassic/webview/webView.html" title="WebViewを活用した簡易Webブラウザ開発" class="chapter done " data-progress="5.2" style="left: 61.76470588235294%;"></a>
+    
+        <a href="../../TitaniumClassic/httpclient/README.html" title="HTTPClientの使い方を学ぶ" class="chapter done new-chapter" data-progress="6" style="left: 64.70588235294117%;"></a>
+    
+        <a href="../../TitaniumClassic/httpclient/projectSetup.html" title="プロジェクト設定" class="chapter done " data-progress="6.1" style="left: 67.6470588235294%;"></a>
+    
+        <a href="../../TitaniumClassic/httpclient/httpClient.html" title="Titanium Mobileの通信機能について" class="chapter done " data-progress="6.2" style="left: 70.58823529411765%;"></a>
+    
+        <a href="../../TitaniumClassic/httpclient/webAPI.html" title="WebAPIからデータのみ取得" class="chapter done " data-progress="6.3" style="left: 73.52941176470588%;"></a>
+    
+        <a href="../../TitaniumClassic/httpclient/withTableView.html" title="WebAPIから取得したデータをTableViewで画面表示" class="chapter done " data-progress="6.4" style="left: 76.47058823529412%;"></a>
+    
+        <a href="../../TitaniumClassic/httpclient/appendix.html" title="参考情報" class="chapter  " data-progress="6.5" style="left: 79.41176470588235%;"></a>
+    
+        <a href="../../TitaniumClassic/acs/README.html" title="ACSと連携させた位置情報処理について学ぶ" class="chapter  new-chapter" data-progress="7" style="left: 82.3529411764706%;"></a>
+    
+        <a href="../../TitaniumClassic/acs/projectsetup.html" title="プロジェクト設定" class="chapter  " data-progress="7.1" style="left: 85.29411764705883%;"></a>
+    
+        <a href="../../TitaniumClassic/acs/mapview.html" title="位置情報処理に必須のMapViewの解説" class="chapter  " data-progress="7.2" style="left: 88.23529411764706%;"></a>
+    
+        <a href="../../TitaniumClassic/acs/mapviewwithACS.html" title="ACSとの連携" class="chapter  " data-progress="7.3" style="left: 91.17647058823529%;"></a>
+    
+        <a href="../../TitaniumClassic/acs/appendix.html" title="参考情報" class="chapter  " data-progress="7.4" style="left: 94.11764705882354%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/fileSeparate/README.html" title="ソースコードの保守性をあげる工夫" class="chapter  new-chapter" data-progress="9" style="left: 97.05882352941177%;"></a>
+    
+        <a href="../../TitaniumClassicAdvance/fileSeparate/howToSeparate.html" title="ファイルの分割方法" class="chapter  " data-progress="9.1" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+            <div class="page-inner">
+            
+                <section class="normal" id="section-gitbook_14">
+                
+                    <h2 id="-qiita-tableview-">取得したQiitaの投稿情報をTableViewを使って画面表示する</h2>
+<p>httpCLientを活用してQiitaの投稿情報を取得する処理まで実装できたので、今度は取得した情報をTableViewの機能と連携させて画面に表示する方法について解説します。</p>
+<h2 id="-">取得した投稿情報のタイトルだけ表示する</h2>
+<p>Qiitaの開発者向けのAPIを通じて投稿情報を取得した結果をTableViewを活用して表示する方法について解説します。</p>
+<p>図にすると以下の様な処理になります。</p>
+<p><img src="../../image/qiitaviewer-tableView-overview-001.jpg" alt="概念図１"></p>
+<p>以下のソースコードをサンプルに順次解説していきます。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> xhr,qiitaURL,method,mainTable,win;
+mainTable = Ti.UI.createTableView({
+  width: <span class="hljs-number">320</span>,
+  height:<span class="hljs-number">480</span>,
+  backgroundColor:<span class="hljs-string">"#fff"</span>,
+  left: <span class="hljs-number">0</span>,
+  top: <span class="hljs-number">0</span>
+});
+win = Ti.UI.createWindow({
+  title:<span class="hljs-string">'QiitaViewer'</span>
+});
+
+qiitaURL = <span class="hljs-string">"https://qiita.com/api/v1/items"</span>;
+method = <span class="hljs-string">"GET"</span>;
+xhr = Ti.Network.createHTTPClient();
+xhr.open(method,qiitaURL);
+xhr.onload = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  <span class="hljs-keyword">var</span> body,i ,len ,row ,rows,textLabel;
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.status === <span class="hljs-number">200</span>) {
+    body = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">this</span>.responseText);
+    rows = [];
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, len = body.length; i &lt; len; i++) { <span class="hljs-comment">// (1)</span>
+      Ti.API.info(body[i].title);
+      row = Ti.UI.createTableViewRow({    <span class="hljs-comment">// (2)</span>
+        width: <span class="hljs-string">'auto'</span>,
+        height:<span class="hljs-number">40</span>,
+        borderWidth: <span class="hljs-number">0</span>,
+        className:<span class="hljs-string">'entry'</span>,
+        color:<span class="hljs-string">"#222"</span>
+      });
+      textLabel = Ti.UI.createLabel({    <span class="hljs-comment">// (3)</span>
+        width:<span class="hljs-string">'auto'</span>,
+        height:<span class="hljs-number">30</span>,
+        top:<span class="hljs-number">5</span>,
+        left:<span class="hljs-number">5</span>,
+        color:<span class="hljs-string">'#222'</span>,
+        font:{
+          fontSize:<span class="hljs-number">16</span>,
+          fontWeight:<span class="hljs-string">'bold'</span>
+        },
+        text:body[i].title
+      });
+      row.add(textLabel);        <span class="hljs-comment">// (4)</span>
+      rows.push(row);            <span class="hljs-comment">// (5)</span>
+    }
+    mainTable.setData(rows);    <span class="hljs-comment">// (6)</span>
+    win.add(mainTable);
+    win.open();
+
+  } <span class="hljs-keyword">else</span> {
+    Ti.API.info(<span class="hljs-string">"error:status code is "</span> + <span class="hljs-keyword">this</span>.status);
+  }
+};
+xhr.onerror = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
+  <span class="hljs-keyword">var</span> error;
+  error = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">this</span>.responseText);
+  Ti.API.info(error.error);
+};
+
+xhr.send();
+</code></pre>
+<h3 id="-">ソースコード解説</h3>
+<ol>
+<li>body.lengthの値を確認することでWebAPIから取得した投稿件数が確認できるので、その件数分ループして、投稿情報を１つづつ取り出していきます</li>
+<li>投稿情報の要素を格納するためにTableViewRowを生成します</li>
+<li>投稿情報のタイトル部分を格納するためにLabelを生成します</li>
+<li>上記で生成したLabelをTableViewRowに配置します</li>
+<li>TableViewRowを配列rowsに挿入します</li>
+<li>WebAPIから取得した投稿件数分のTableViewRowが配列rowsに格納されているので、その情報をTableViewに表示するために、setDataメソッドを使います</li>
+</ol>
+<p>上記をbuildして、iPhone、AndroidのEmulatorで表示した場合以下の様になります</p>
+<table>
+<th>iPhone起動時の画面キャプチャ</th>
+<th>Android起動時の画面キャプチャ</th>
+<tr>
+<td>
+<a href="../../image/qiitaviewer-httpClient-iphone-002.jpg" target="_blank"><img src="https://s3-ap-northeast-1.amazonaws.com/tiuitips/qiitaviewer-httpClient-iphone-002.jpg" alt="iPhone Simulator"></a>
+</td>
+<td>
+<a href="../../image/qiitaviewer-httpClient-android-002.jpg" target="_blank"><img src="https://s3-ap-northeast-1.amazonaws.com/tiuitips/qiitaviewer-httpClient-android-002.jpg" alt="iPhone Simulator"></a>
+</tr>
+</table>
+
+
+<h2 id="-">取得した投稿情報のタイトルとアイコン画像を表示する</h2>
+<p>先程は、タイトルのみ表示する方法について解説しましたが、タイトルだけではなく投稿したユーザのアイコンをTableViewを活用して表示する方法について解説します</p>
+<p>図にすると以下の様な処理になります。</p>
+<p><img src="../../image/qiitaviewer-tableView-overview-002.jpg" alt="概念図２"></p>
+<p>TableViewを使って投稿情報のタイトルと投稿したユーザのアイコンを表示するソースコード全体は以下になります</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> xhr,qiitaURL,method,mainTable,win;
+mainTable = Ti.UI.createTableView({
+  width: <span class="hljs-number">320</span>,
+  height:<span class="hljs-number">480</span>,
+  backgroundColor:<span class="hljs-string">"#fff"</span>,
+  left: <span class="hljs-number">0</span>,
+  top: <span class="hljs-number">0</span>
+});
+win = Ti.UI.createWindow({
+  title:<span class="hljs-string">'QiitaViewer'</span>
+});
+
+qiitaURL = <span class="hljs-string">"https://qiita.com/api/v1/items"</span>;
+method = <span class="hljs-string">"GET"</span>;
+xhr = Ti.Network.createHTTPClient();
+xhr.open(method,qiitaURL);
+xhr.onload = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+  <span class="hljs-keyword">var</span> body,i ,len ,row ,rows,textLabel,iconImage,imagePath;
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.status === <span class="hljs-number">200</span>) {
+    body = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">this</span>.responseText);
+    rows = [];
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, len = body.length; i &lt; len; i++) {
+      row = Ti.UI.createTableViewRow({
+        width: <span class="hljs-string">'auto'</span>,
+        height:<span class="hljs-number">60</span>,
+        borderWidth: <span class="hljs-number">0</span>,
+        className:<span class="hljs-string">'entry'</span>,
+        color:<span class="hljs-string">"#222"</span>
+      });
+      textLabel = Ti.UI.createLabel({
+        width:<span class="hljs-number">250</span>,
+        height:<span class="hljs-number">30</span>,
+        top:<span class="hljs-number">5</span>,
+        left:<span class="hljs-number">60</span>,
+        color:<span class="hljs-string">'#222'</span>,
+        font:{
+          fontSize:<span class="hljs-number">16</span>,
+          fontWeight:<span class="hljs-string">'bold'</span>
+        },
+        text:body[i].title
+      });
+      imagePath = body[i].user.profile_image_url;
+      iconImage = Ti.UI.createImageView({
+        width:<span class="hljs-number">40</span>,
+        height:<span class="hljs-number">40</span>,
+        top:<span class="hljs-number">5</span>,
+        left:<span class="hljs-number">5</span>,
+        defaultImage:<span class="hljs-string">"logo.png"</span>,
+        image: imagePath
+      });
+
+      row.add(textLabel);
+      row.add(iconImage);
+      rows.push(row);
+    }
+    mainTable.setData(rows);
+    win.add(mainTable);
+    win.open();
+
+  } <span class="hljs-keyword">else</span> {
+    Ti.API.info(<span class="hljs-string">"error:status code is "</span> + <span class="hljs-keyword">this</span>.status);
+  }
+};
+xhr.onerror = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
+  <span class="hljs-keyword">var</span> error;
+  error = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">this</span>.responseText);
+  Ti.API.info(error.error);
+};
+xhr.timeout = <span class="hljs-number">5000</span>;
+xhr.send();
+</code></pre>
+<p>上記ソースコードをbuildして、iPhone、AndroidのEmulatorで表示した場合以下の様になります</p>
+<table>
+<th>iPhone起動時の画面キャプチャ</th>
+<th>Android起動時の画面キャプチャ</th>
+<tr>
+<td>
+<a href="../../image/qiitaviewer-tableView-iphone-001.jpg" target="_blank"><img src="https://s3-ap-northeast-1.amazonaws.com/tiuitips/qiitaviewer-tableView-iphone-001.jpg" alt="iPhone Simulator"></a>
+</td>
+<td>
+<a href="../../image/qiitaviewer-tableView-android-001.jpg" target="_blank"><img src="https://s3-ap-northeast-1.amazonaws.com/tiuitips/qiitaviewer-tableView-android-001.jpg" alt="iPhone Simulator"></a>
+</tr>
+</table>
+
+<h3 id="webapi-">WebAPI経由で画像を表示する際に意識しておくべきポイント</h3>
+<p>今回のようなWebAPIを通じて画像を取得して表示するような場合、ネットワークの回線状況によってはすぐに標示されるとは限りません。</p>
+<p>そのため、ImageViewのdefaultImageというプロパティに、あらかじめローカルに準備しておいた画像を指定することで、</p>
+<ol>
+<li>最初にローカルの画像が表示</li>
+<li>画像のダウンロード完了時に、ローカルの画像とリモートから取得した画像が入れ替わる</li>
+</ol>
+<p>という処理が自動的にされるため以下のようにTitaniumのImageViewのdefaultImageのプロパティを適切に設定することをお勧めします。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 一部抜粋</span>
+imagePath = body[i].user.profile_image_url;
+iconImage = Ti.UI.createImageView({
+  width:<span class="hljs-number">40</span>,
+  height:<span class="hljs-number">40</span>,
+  top:<span class="hljs-number">5</span>,
+  left:<span class="hljs-number">5</span>,
+  defaultImage:<span class="hljs-string">"logo.png"</span>, <span class="hljs-comment">// Resources/logo.pngを準備してある前提です</span>
+  image: imagePath
+});
+row.add(iconImage);
+</code></pre>
+
+                
+                </section>
+            
+            </div>
+
+            <div class="page-footer">
+    
+        
+            
+            <a href="../../TitaniumClassic/httpclient/appendix.html" class="navigation-link next">Next</a>
+            
+        
+    
+</div>
+        </div>
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        
+    </body>
+</html>
