@@ -1,10 +1,10 @@
-## JavaScriptでの変数について抑えておくポイント
+# JavaScriptでの変数について抑えておくポイント
 
 先程変数について説明しましたが、この章では、JavaScriptでの変数について抑えておくべき２つのポイントについて解説します
 
 ## グローバル変数とローカル変数
 
-Titanium Studioで新規プロジェクト作成後に生成されるapp.jsにこんなコードを書いたとします。
+Titanium Studioで新規プロジェクト作成後に生成されるapp.jsに以下の様なコードを書いたとします。
 
 ```javascript
 var globalMessage = 'Global Hello';
