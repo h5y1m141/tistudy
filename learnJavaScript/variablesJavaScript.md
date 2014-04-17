@@ -28,11 +28,11 @@ function showMessage(text){
 
 変数globalMessageは、グローバル変数のためどこからでも参照することが出来ます。
 
-![グローバル変数](../../image/globalVariables.png)
+![グローバル変数](../image/globalVariables.png)
 
 一方、showMessage()という関数内で宣言されてる変数については、変数内では参照できますが、変数の外部からは参照できません。
 
-![ローカル変数](../../image/localVariables.png)
+![ローカル変数](../image/localVariables.png)
 
 変数を全てグローバル変数で宣言するとどこからでも参照できるため使い勝手が良く、多用してしまいたくなるかと思います。
 

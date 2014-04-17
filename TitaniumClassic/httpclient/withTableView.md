@@ -86,17 +86,13 @@ xhr.send();
 
 上記をbuildして、iPhone、AndroidのEmulatorで表示した場合以下の様になります
 
-<table>
-<th>iPhone起動時の画面キャプチャ</th>
-<th>Android起動時の画面キャプチャ</th>
-<tr>
-<td>
-<a href="../../image/qiitaviewer-httpClient-iphone-002.jpg" target="_blank"><img src="https://s3-ap-northeast-1.amazonaws.com/tiuitips/qiitaviewer-httpClient-iphone-002.jpg" alt="iPhone Simulator"></a>
-</td>
-<td>
-<a href="../../image/qiitaviewer-httpClient-android-002.jpg" target="_blank"><img src="https://s3-ap-northeast-1.amazonaws.com/tiuitips/qiitaviewer-httpClient-android-002.jpg" alt="iPhone Simulator"></a>
-</tr>
-</table>
+<!-- #### iPhone起動時の画面キャプチャ -->
+
+![iPhone起動時の画面キャプチャ](../../image/qiitaviewer-httpClient-iphone-002.jpg)
+
+<!-- #### Android起動時の画面キャプチャ -->
+
+<!-- ![Android起動時の画面キャプチャ](../../image/qiitaviewer-httpClient-android-002.jpg) -->
 
 
 ## 取得した投稿情報のタイトルとアイコン画像を表示する
@@ -184,28 +180,20 @@ xhr.send();
 
 上記ソースコードをbuildして、iPhone、AndroidのEmulatorで表示した場合以下の様になります
 
-<table>
-<th>iPhone起動時の画面キャプチャ</th>
-<th>Android起動時の画面キャプチャ</th>
-<tr>
-<td>
-<a href="../../image/qiitaviewer-tableView-iphone-001.jpg" target="_blank"><img src="https://s3-ap-northeast-1.amazonaws.com/tiuitips/qiitaviewer-tableView-iphone-001.jpg" alt="iPhone Simulator"></a>
-</td>
-<td>
-<a href="../../image/qiitaviewer-tableView-android-001.jpg" target="_blank"><img src="https://s3-ap-northeast-1.amazonaws.com/tiuitips/qiitaviewer-tableView-android-001.jpg" alt="iPhone Simulator"></a>
-</tr>
-</table>
+<!-- #### iPhone起動時の画面キャプチャ -->
+
+![iPhone起動時の画面キャプチャ](../../image/qiitaviewer-tableView-iphone-001.jpg)
+
+<!-- #### Android起動時の画面キャプチャ -->
+
+<!-- ![Android起動時の画面キャプチャ](../../image/qiitaviewer-tableView-android-001.jpg) -->
+
 
 ### WebAPI経由で画像を表示する際に意識しておくべきポイント
 
-今回のようなWebAPIを通じて画像を取得して表示するような場合、ネットワークの回線状況によってはすぐに標示されるとは限りません。
+今回のようなWebAPIを通じて画像を取得して表示するような場合、ネットワークの回線状況によってはすぐに表示されるとは限らず、利用するユーザさんにとって使い勝手が悪い印象をあたえる可能性があります。
 
-そのため、ImageViewのdefaultImageというプロパティに、あらかじめローカルに準備しておいた画像を指定することで、
-
-1. 最初にローカルの画像が表示
-2. 画像のダウンロード完了時に、ローカルの画像とリモートから取得した画像が入れ替わる
-
-という処理が自動的にされるため以下のようにTitaniumのImageViewのdefaultImageのプロパティを適切に設定することをお勧めします。
+ImageViewにはdefaultImageというプロパティがあります。
 
 ```javascript
 // 一部抜粋
@@ -220,3 +208,10 @@ iconImage = Ti.UI.createImageView({
 });
 row.add(iconImage);
 ```
+
+上記のようにここにあらかじめローカルに準備しておいた画像パスを設定することで
+
+1. 最初にローカルの画像が表示
+2. 画像のダウンロード完了時に、ローカルの画像とリモートから取得した画像が入れ替わる
+
+という処理が自動的にされるのでこれを適切に設定することをお勧めします。

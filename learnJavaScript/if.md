@@ -87,6 +87,8 @@ list1 + list2
 
 <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113911/hoyamada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41H0Dk-K3PL._SL160_.jpg" alt="JavaScript: The Good Parts ―「良いパーツ」によるベストプラクティス" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113911/hoyamada-22/ref=nosim/" name="amazletlink" target="_blank">JavaScript: The Good Parts ―「良いパーツ」によるベストプラクティス</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 14.03.31</div></div><div class="amazlet-detail">Douglas Crockford <br />オライリージャパン <br />売り上げランキング: 4,516<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113911/hoyamada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
+---
+
 ## == と === の違い
 
 Qiitaに[厳密等価演算子 javaプログラマのjavascript入門](http://qiita.com/lasaya/items/d7d7a98e089d7fb91b84)という記事がありここから一部文章を引用します
@@ -112,7 +114,8 @@ if(list1 == list2){
 }
 ```
 
-とあった場合には、
+とあった場合には、コンソール上では
+
 ```sh
 Ti.API.info("list1 and list2 is same");
 ```
@@ -131,18 +134,19 @@ if(list1 === list2){
   Ti.API.info("list1 and list2 is not same");
 }
 ```
-というコードはelse句が評価されて
+というコードはelse句が評価されるため、コンソール上では
 
 ```sh
 [INFO] list1 and list2 is not same
 ```
-という形になります。
-
+と表示されます。
 
 
 ## まとめ
 
-この章の内容が長くなったので最後簡単にまとめておきます。if文を使いこなすのは簡単そうに見えるのですが、以下の様なポイントおさえておかないと思いがけないエラーが生じる可能性あります。
+この章の内容が長くなったので最後簡単にまとめておきます。
+
+if文を使いこなすのは簡単そうに見えるのですが、以下の様なポイントおさえておかないと思いがけないエラーが生じる可能性あります。
 
 - 変数には型があるのをまずは理解しておく必要ある。
 - if文を使って値のチェックをする時に、== （等価演算子）と=== （厳密等価演算子）がある。

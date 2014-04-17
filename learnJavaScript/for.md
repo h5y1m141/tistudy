@@ -3,20 +3,20 @@
 ## はじめに
 
 
-過去私がが作ってきたアプリを振り返るとWebAPIから取得したJSON形式のデータを**１つづつ取り出して**処理したり、アプリ側のデータベースの機能を利用してキャッシュした情報から**データを１つづつ取り出して**TableViewRowに追加していくような処理をすることが比較的多くありました。
+過去私がが作ってきたアプリを振り返るとWebAPIから取得したJSON形式のデータを**１つづつ取り出して**処理したりアプリケーション側のデータベースの機能を利用してキャッシュした情報から**データを１つづつ取り出して**TableViewRowに追加していくような処理をすることが比較的多くありました。
 
-作るアプリによっては、他の制御文を利用するケースというのももちろんありますが、Titanium Mobileが得意とするWeb APIと連携するスマフォアプリ開発に限ればまずは
+作るアプリケーションによっては、他の制御文を利用するケースというのももちろんありますが、Titanium Mobileが得意とするWeb APIと連携するスマフォアプリ開発に限ればまずは
 
 - ループ処理のための for
 - if
 
-の２点をおさえておくのが良いかと思っております。
+の２点をおさえておくことで、アプリケーション開発に取り組みやすくなるかと思ってます。
 
-そこで、まずはサンプルコードを示しながら、for ループの使い方について解説をしていきます。
+そこで、まずはサンプルコードを示しながらfor ループの使い方について解説をしていきます。
 
 ## for ループを使って複数のTabを生成するサンプル
 
-前回は、関数に渡す引数を以下のようにすることでI am Window1!!! や、I am Window2!!!というラベルが表示されるタブを２つ生成しました
+前回は、関数に渡す引数を以下のようにすることでI am Window1!!! や、I am Window2!!!というラベルが表示されるタブを２つ生成しました。
 
 ```javascript
 var tab1 = createTabElement('1!!!');
@@ -66,4 +66,11 @@ function createTabElement(titleNumber){
 
 上記実行すると、このようにタブが５つ生成されます。
 
-<p><span itemscope itemtype="http://schema.org/Photograph"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/h5y1m141/20140324/20140324064516.png" alt="f:id:h5y1m141:20140324064516p:plain" title="f:id:h5y1m141:20140324064516p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+### iPhoneでの実行イメージ
+
+![iphone](../image/javascript-for-iphone.png)
+
+### Androidでの実行イメージ
+
+![android](../image/javascript-for-android.png)

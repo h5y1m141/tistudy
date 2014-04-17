@@ -25,8 +25,8 @@ file = sample.read().toString();
 body = JSON.parse(file);
 
 mainTable = Ti.UI.createTableView({
-  width: 320,
-  height:480,
+  width: Ti.UI.FULL,
+  height:Ti.UI.FULL,
   backgroundColor:"#fff",
   left: 0,
   top: 0
@@ -34,7 +34,7 @@ mainTable = Ti.UI.createTableView({
 win = Ti.UI.createWindow({
   title:'QiitaViewer'
 });
-rows = []
+rows = [];
 for (i = 0, len = body.length; i < len; i++) { // (1)
   row = Ti.UI.createTableViewRow({	// (2)
     width: 'auto',
@@ -62,6 +62,15 @@ mainTable.setData(rows);    // (6)
 win.add(mainTable);
 win.open();
 ```
+
+### iPhoneでの実行イメージ
+
+![iPhone](../../image/tableview-tableview-iphone.png)
+
+### Androidでの実行イメージ
+
+![android](../../image/tableview-tableview-android.png)
+
 ### 上記ソースコード解説
 
 1. body.lengthの値を確認することで投稿件数が確認できるので、その件数分ループして、投稿情報を１つづつ取り出していきます
@@ -70,4 +79,3 @@ win.open();
 4. 上記で生成したLabelをTableViewRowに配置します
 5. TableViewRowを配列rowsに挿入します
 6. 投稿件数分のTableViewRowが配列rowsに格納されているので、その情報をTableViewに表示するために、setDataメソッドを使います
-

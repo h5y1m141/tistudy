@@ -38,7 +38,7 @@ win1.add(label1);                       // (5)
 4. 表示内容「I am Window 1」、表示色を灰色（#999）、フォント名＆サイズを指定したLabelを生成。label1という名前を付けてます
 5. win1の内部にlabel1を配置してます
 
-![UI配置イメージ](https://raw.github.com/h5y1m141/streetAcademy/master/image/1stStep-008.png)
+![UI配置イメージ](../image/1stStep-008.png)
 
 これと似た処理が、省略された箇所で実施されてますが、こういう似たような処理をコピーしながら適宜修正して・・という作業をしててうっかり作業を間違える可能性もあるかと思います。
 
@@ -48,7 +48,9 @@ win1.add(label1);                       // (5)
 
 ## createTabElementというを関数を使って書き換える
 
-Label、Window、Tabにそれぞれ表示する文字が違いますが、Ti.UI.Label、Ti.UI.Window、Ti.UI.Tabを生成するという意味においては、共通した処理になるため、このUI要素を生成する部分を関数として定義することにします。
+Label、Window、Tabにそれぞれ表示する文字が違いますが、Ti.UI.Label、Ti.UI.Window、Ti.UI.Tabというユーザインタフェースに関する**要素を生成する**という意味においては、共通しています。
+
+このUI要素を生成する部分を関数として定義することにします。
 
 ### 関数の名前付けについて
 

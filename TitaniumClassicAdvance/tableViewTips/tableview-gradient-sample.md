@@ -1,12 +1,4 @@
----
-title: 微妙な明度差のグラデーションを活用
-layout: post
-category: ui
-pict: tableViewGradientSample.png
-desc: 背景色に微妙な明度差のグラデーションにすることで見た目の印象がかなり変わります。backgroundGradientプロパティを活用することがそれが実現できます
-tags : [view]
----
-{% include JB/setup %}
+# 微妙な明度差のグラデーションを活用
 
 ## はじめに
 
