@@ -66,11 +66,3 @@ function createTabElement(titleNumber){
 
 上記実行すると、このようにタブが５つ生成されます。
 
-
-### iPhoneでの実行イメージ
-
-![iphone](../image/javascript-for-iphone.png)
-
-### Androidでの実行イメージ
-
-![android](../image/javascript-for-android.png)

@@ -1,168 +1,128 @@
-# UI生成処理は別ファイルにする方法
+# UI生成処理を別ファイルにする
 
 ## はじめに
 
-Webサイト構築する際に、見栄えに関わる部分をHTMLから分離して、CSSに記述するというのは理解しやすい話しかと思います。このような考え方をTitanium Mobileでの開発で応用させることで、当初のソースコードから見通しの良いものになるかと思います。
+先程は設定情報だけを別のファイルにする方法を解説しましたが、現実にはこういう形よりも、画面単位で処理を分割するアプローチの方がより使い勝手の良いものになるので具体的にその方法についてサンプルコードを示しながら解説をしてきます。
 
-## 幅、高さ、色などの設定情報だけを別ファイルにする
+## ウィンドウを生成するためのファイルを作成する
 
-UI生成に関する処理と、それぞれのUI 要素の設定情報を
+Resources直下に、mainWindow.jsというファイルを新規に作成しします。
 
-- Window、TableView、Label、Button のそれぞれのUI 要素の幅、高さ、色などの設定情報だけをまとめたファイルを作る（**仮にstyle.js**とします）
-- UI 要素となるオブジェクトを生成する際に上記のstyle.jsに記述された該当の設定情報を反映させる
+作成後は以下の様なフォルダ構成になるかと思います。
 
-という形にすることで、当初のソースコードよりも見通しがよくなるかと思います。
-
-以下具体的な方法についてサンプルコードを紹介しながら解説します
-
-## ソースコード解説
-
-まずそれぞれのUI 要素の幅、高さ、色などの設定情報だけをまとめたstyle.jsを作成して、以下のように記述します
-
-```javascript
-// style.js
-
-{"style":{
-    "mainTable":{
-      width: 320,
-      height:480,
-      backgroundColor:"#fff",
-      separatorColor:"#ccc",
-      left: 0,
-      top: 0
-    },
-    "row":{
-      width: 'auto',
-      height:60,
-      borderWidth: 0,
-	  className:'entry',
-      backgroundGradient: {
-        type: 'linear',
-        startPoint: {
-          x: '0%',
-          y: '0%'
-        },
-        endPoint: {
-          x: '0%',
-          y: '100%'
-        },
-        colors: [{
-	  color: '#f8f8f8',
-	  position: 0.0
-	},{
-          color: '#f2f2f2',
-          position: 0.7
-	},{
-          color: '#e8e8e8',
-          position: 1.0
-	}]
-      }
-    },
-    "textLabel":{
-      width:250,
-      height:30,
-      top:5,
-      left:60,
-      color:'#222',
-      font:{
-	fontSize:16,
-	fontWeight:'bold'
-      }
-    },
-    "iconImage":{
-      width:40,
-      height:40,
-      top:5,
-      left:5,
-      borderColor:"#bbb",
-      borderWidth:1,
-      defaultImage:"logo.png"
-    },
-    "view":{
-      width: 'auto',
-      height:60,
-      backgroundGradient: {
-        type: 'linear',
-        startPoint: {
-          x: '0%',
-          y: '0%'
-        },
-        endPoint: {
-          x: '0%',
-          y: '100%'
-        },
-        colors: [{
-	  color: '#f8f8f8',
-	  position: 0.0
-	},{
-          color: '#f2f2f2',
-          position: 0.7
-	},{
-          color: '#e8e8e8',
-          position: 1.0
-	}]
-      }
-    }
-}}
+```sh
+├── CHANGELOG.txt
+├── LICENSE
+├── LICENSE.txt
+├── README
+├── Resources
+│   ├── KS_nav_ui.png
+│   ├── KS_nav_views.png
+│   ├── app.js
+│   ├── iphone
+│   ├── mainWindow.js
+│   ├── sample.json
+│   └── style.js
+├── build
+│   └── iphone
+├── manifest
+└── tiapp.xml
 ```
 
-次にapp.jsを以下のようにします。
+それぞれのファイルの役割は以下のようになります。
+
+- app.js
+    - 起動時に必要なファイル群を読み込んで最低限の処理を実施
+- mainWindow.js
+    - Ti.UI.TableViewなどの必要な要素を配置したTi.UI.Windowを生成するファイル
+- style.js
+    - Ti.UIのそれぞれの要素の色、幅、高さなどの設定値を保持してるファイル
+
+
+先ほど作成したstyle.jsはそのまま活用しているのでそちらのソースコードと説明は割愛します。
+
+app.jsとmainWindow.jsのコードを示しながら順番に解説します。
+
+## app.jsの役割
+
+Titanium Mobileの新規プロジェクト作成時に出来上がるひな形となるapp.jsでは1つのフィアル内で色々な処理が実施されていましたが、今回のようにいくつかの処理単位にファイルに分割することで、app.jsは、起動時に必要なファイル群を読み込むだけの最低限の処理を行うだけの役割にします。
+
+### app.jsの中身
 
 ```javascript
-// app.js
-
-var styleJS,file,style,xhr,qiitaURL,method,mainTable,win,view,colorSet;
-styleJS = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "style.js"); // (1)
-file = styleJS.read().toString();
-style = JSON.parse(file);  // (2)
-mainTable = Ti.UI.createTableView(style.mainTable);  // (3)
-win = Ti.UI.createWindow({
-  title:'QiitaViewer'
-});
-
-qiitaURL = "https://qiita.com/api/v1/items";
-method = "GET";
-
-xhr = Ti.Network.createHTTPClient();
-xhr.open(method,qiitaURL);
-xhr.onload = function(){
-  var body,_i ,_len ,row ,rows,textLabel,iconImage,imagePath;
-  if (this.status === 200) {
-    body = JSON.parse(this.responseText);
-    rows = [];
-    for (_i = 0, _len = body.length; _i < _len; _i++) {
-      row = Ti.UI.createTableViewRow(style.iPhoneRow);  // (5)
-      textLabel = Ti.UI.createLabel(style.textLabel);   // (6)
-      textLabel.text = body[_i].title;
-      imagePath = body[_i].user.profile_image_url;
-      iconImage = Ti.UI.createImageView(style.iconImage); // (7)
-      iconImage.image = imagePath;
-      row.add(textLabel);
-      row.add(iconImage);
-      rows.push(row);
-    }
-    mainTable.setData(rows);
-    win.add(mainTable);
-    win.open();
-
-  } else {
-    Ti.API.info("error:status code is " + this.status);
-  }
-};
-xhr.onerror = function(e) {
-  var error;
-  error = JSON.parse(this.responseText);
-  Ti.API.info(error.error);
-};
-
-xhr.send();
+var sample,file,body,win,mainWindow;
+sample = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "sample.json");
+file = sample.read().toString();
+body = JSON.parse(file);
+mainWindow = require("mainWindow");                  //(1)
+win = mainWindow.createWindow('Qiita Viewer',body);  //(2)
+win.open();
 ```
 
-### ソースコード解説
-1. ffdfd
-2. ffdfd
-3. ffdfd
-4. ffdfd
-5. ffdfd
-6. ffdfd
-7. ffdfd
+### app.jsのソースコード解説
+
+1. Ti.UI.Windowを生成する処理をmainWindow.jsに処理をわけているので、そのファイルを読み込む
+2. mainWindow.jsにて定義してるcreateWindow()関数に必要な引数を渡してTi.UI.Windowを生成。生成されたオブジェクトは変数winに格納
+
+
+## mainWindow.jsの役割
+
+それぞれのUI要素が配置されたTi.UI.Windowを生成して最終的にそのTi.UI.Windowを値とし返してます。
+
+先ほど作ったstyle.jsと少し異なる部分があるのでそこを掘り下げて解説します
+
+
+### mainWindow.jsの中身
+
+```javascript
+exports.createWindow = function(windowTitle,items){
+	var style,mainTable,win,rows,_i,_len,row,textLabel;
+	style = require("style");
+	mainTable = Ti.UI.createTableView(style.mainTable);
+	win = Ti.UI.createWindow({
+		title:windowTitle
+	});
+	rows = [];
+	for (_i = 0, _len = items.length; _i < _len; _i++) {
+		row = Ti.UI.createTableViewRow(style.row);
+		textLabel = Ti.UI.createLabel(style.textLabel);
+		textLabel.text = items[_i].title;
+		row.add(textLabel);
+		rows.push(row);
+	}
+	mainTable.setData(rows);
+	win.add(mainTable);
+	return win;
+};
+```
+
+上記の中でポイントになる箇所だけ抜粋します
+
+```javascript
+exports.createWindow = function(windowTitle,items){ // (1)
+  var win;
+  win = Ti.UI.createWindow({
+    //省略
+  });
+  return win;                                       // (2)
+};
+```
+1. exports.関数名 = function(引数名){} という形にすることで、外部からここで定義された関数を実行することが出来ます。（今回のサンプルではcreateWindowというのが関数名になります）
+2. 関数内でTi.UI.Windowを生成して必要な要素を追加して最後に、return win とすることで、変数winに格納されたTi.UI.Windowを得ることが出来ます。このreturn winの一行をいれないと、呼び出し側からは、生成したTi.UI.Windowが得られず、何も表示されなくなるので注意が必要です
+
+
+## 実行結果
+
+iPhone、Androidでの実行結果はそれぞれ以下のようになります。
+
+### iPhoneでの実行イメージ
+
+![iphone](../../image/fileseparate-howToSeparate-iphone.png)
+
+### Androidでの実行イメージ
+
+![android](../../image/fileseparate-howToSeparate-android.png)
+
+## まとめ
+
+UI生成処理を別ファイルにする方法についてまとめました。ソースコードの保守性をあげるためにもう一工夫出来る所があるので、その点について次の項で説明します
