@@ -57,7 +57,7 @@ tabGroup.open();
 
 ![buildした結果の画面イメージ](../../image/TitaniumClassic-webview-android.png)
 
-## HTMLコンテンツ準備して表示
+## HTMLコンテンツを準備して表示
 
 先程は、指定したURLを表示する機能を試しましたが今度はあらかじめ準備しておいたHTMLコンテンツを表示する機能を実装します
 
@@ -209,7 +209,7 @@ tabGroup.open();
 4. Ti.Platform.nameの値をチェックして、Ti.UI.ActivityIndicatorのstyleに適切な値を設定する。（なおAndroid OS向けにTi.UI.iPhone.ActivityIndicatorStyle.DARKを代入すると、アプリケーションが起動しないため両方のOSに対応する場合にはこの処理は必須になります）
 5. 「読み込み中」ということを実現するためにTi.UI.ActivityIndicatorを作成
 6. Ti.UI.WebViewで利用できるイベントリスナーの１つに **beforeload** があります。これはコンテンツの読み込みが始まる前の処理を割り当てることが出来ます。今回はコンテンツが読込中であることを意図するために、Ti.UI.ActivityIndicatorを表示してます。
-7. Ti.UI.WebViewで利用できるイベントリスナーの１つに **load** があります。これはコンテンツの読み込みが完了したタイミングで処理を割り当てることが出来ます。今回はコンテンツが読込完了したことを表現したいんで、Ti.UI.ActivityIndicatorを非表示にしてます。
+7. Ti.UI.WebViewで利用できるイベントリスナーの１つに **load** があります。これはコンテンツの読み込みが完了したタイミングで処理を割り当てることが出来ます。今回はコンテンツが読込完了したことを表現したいので、Ti.UI.ActivityIndicatorを非表示にしています。
 
 ### iPhoneでの動作イメージ
 

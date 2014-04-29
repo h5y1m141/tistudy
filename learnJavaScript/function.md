@@ -32,9 +32,9 @@ win1.add(label1);                       // (5)
 // 以下省略
 ```
 
-1. Tabを格納するためのTabGroupを生成tabGroupという名前を付けてます
-2. タイトルが「Tab 1]、背景色が白（#fff）のWindowを生成win1という名前を付けてます
-3. タイトルが「Tab 1]、アイコンを指定、対応するWindowとしてWin1を指定したTabを生成。tab1という名前を付けてます
+1. Tabを格納するためのTabGroupを生成し、tabGroupという名前を付けます
+2. タイトルが「Tab 1」、背景色が白（#fff）のWindowを生成win1という名前を付けてます
+3. タイトルが「Tab 1」、アイコンを指定、対応するWindowとしてWin1を指定したTabを生成。tab1という名前を付けてます
 4. 表示内容「I am Window 1」、表示色を灰色（#999）、フォント名＆サイズを指定したLabelを生成。label1という名前を付けてます
 5. win1の内部にlabel1を配置してます
 
