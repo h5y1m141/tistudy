@@ -42,8 +42,8 @@
     <!-- - [画面遷移後に元のスクロール位置まで戻す方法](TitaniumClassicAdvance/tableViewTips/scroll-to-index.md) -->
     <!-- - [検索ボックスでマッチする値だけ表示する方法](TitaniumClassicAdvance/tableViewTips/tableview-with-custom-data-and-search.md) -->
 - [手軽に使えて開発効率があがるJavaScriptライブラリの紹介](TitaniumClassicAdvance/introduceJSLibrary/README.md)
-- [日付処理を便利に行えるmoment.js](TitaniumClassicAdvance/introduceJSLibrary/moment/README.md)
-    - [SNS系アプリのタイムラインにある「xx時間前に投稿」を手軽に実現する](TitaniumClassicAdvance/introduceJSLibrary/README.md)
+- [日付処理を便利に行えるMoment.js](TitaniumClassicAdvance/introduceJSLibrary/moment/README.md)
+    - [Moment.jsを使ったサンプルアプリ](TitaniumClassicAdvance/introduceJSLibrary/moment/useMomentjs.md)
     - [更新日の差分を取得する](TitaniumClassicAdvance/introduceJSLibrary/README.md)
 - [配列操作を便利に行えるUnderscore.js](TitaniumClassicAdvance/introduceJSLibrary/underscore/README.md)
     - [配列から特定のユーザだけ抽出する](TitaniumClassicAdvance/introduceJSLibrary/README.md)
