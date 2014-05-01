@@ -8,14 +8,17 @@ Titanium Mobileの標準APIであるhttpCLientを通じてQiitaの投稿情報�
 
 ![ローカルのJSONを活用したTableView](../../image/localJSONSample.png)
 
-サンプルデータは以下に準備してあるので、Webブラウザでダウンロードして、必ず現在開発中のTitanium MobileのプロジェクトのResourcesフォルダ直下に保存してください
+サンプルデータは以下に準備してあります。
 
-[https://raw.github.com/h5y1m141/20130817-tistudy/master/sample.json](https://raw.github.com/h5y1m141/20130817-tistudy/master/sample.json)
+[https://raw.githubusercontent.com/h5y1m141/tistudy/master/TitaniumClassic/tableview/sample.txt](https://raw.githubusercontent.com/h5y1m141/tistudy/master/TitaniumClassic/tableview/sample.txt)
 
-保存が完了したら、以下要領で作業をします
 
-1. 先ほどの **app.jsの中身のソースコードを全て削除**します。
-2. その後に以下を記述します
+以下要領で作業をします
+
+1. Webブラウザでダウンロードして、ファイル名をsample.txtから、sample.jsonに変更
+2. 現在開発中のTitanium MobileのプロジェクトのResourcesフォルダ直下に保存してください
+3. 先ほどの **app.jsの中身のソースコードを全て削除**します。
+4. その後に以下を記述します
 
 ```javascript
 var sample, file, body, mainTable, win, i ,len ,row ,rows,textLabel;
