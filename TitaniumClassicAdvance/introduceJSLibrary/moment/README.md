@@ -18,13 +18,19 @@ Titanium Mobileでは、CommonJSスタイルで書かれたJavaScriptのライ�
 
 ![iPhone](../../../image/introduceJSLibrary-moment00.png)
 
-ファイル名を**moment.min.jsからmoment.js**に変更します。
+ダウンロードしたファイルを**moment.min.jsからmoment.js**に変更します。
 
-デフォルトは英語表記なのですが、i18n（internationalization。国際化）対応しているので、日本語表記をした別ファイルを準備することで手軽に日本語化も出来ます。[株式会社ジーティーアイ](http://gti.jp)の佐藤　毅 さんという方が作成した[moment.lang_ja.js](http://gti.jp/ajax/livestamp/moment.lang_ja.js)をダウンロードして利用します。
+### 日本語化するためのファイルを別途ダウンロードする
+
+Moment.jsはデフォルトは英語表記なのですがi18n（internationalization。国際化）対応しているので、日本語表記をした別ファイルを準備することで手軽に日本語化も出来ます。
+
+[株式会社ジーティーアイ](http://gti.jp)の佐藤　毅 さんという方が作成した[moment.lang_ja.js](http://gti.jp/ajax/livestamp/moment.lang_ja.js)をダウンロードして利用します。
 
 なお、moment.lang_ja.jsのファイル名だと手元の環境では、require()で読み込めなかったので**momentja.js**という形にリネームして利用します。
 
-プロジェクト直下のフォルダが以下のようなディレクトリ構造になります
+### それぞれのファイルを配置した結果の状態
+
+プロジェクト直下のフォルダが以下のようなディレクトリ構造になっていればOKです
 
 ```sh
 .
@@ -49,7 +55,7 @@ Titanium Mobileでは、CommonJSスタイルで書かれたJavaScriptのライ�
 └── tiapp.xml
 ```
 
-## Moment.jsの例
+## Moment.jsを使ってみる
 
 Moment.js使った簡易のサンプルをまずは紹介します。
 
@@ -70,6 +76,8 @@ alert(time2);
 ### time1の実行結果
 
 momentを読み込んだ後に、momentjaを読み込んで日本語化されてるため、以下のように表示されます。
+
+※キャプチャー画面はiPhone（iOS7）のアラート部分のみ取得してますので、iPhone版の別のiOSやAndroidでの表示は多少異なります。
 
 ![](../../../image/introduceJSLibrary-moment-alert00.png)
 

@@ -1,8 +1,10 @@
-# Moment.jsを使ったサンプルアプリ
+# QiitaのWebAPIと連携させるアプリでMoment.jsを使う
 
 ## はじめに
 
-先ほどMoment.jsの概要を解説しましたので、これ以降、Moment.jsを使ったサンプルアプリの解説をします。
+先ほどMoment.jsの概要を解説しましたので、QiitaのWebAPIと連携させるアプリでMoment.jsを使ったサンプルアプリの解説をします。
+
+## QiitaのWebAPIの投稿情報の日付データの扱いについて
 
 QiitaのWebAPIでは、xx分前の情報かわかるような項目がすでに存在すると前の項で解説しましたが、例えば、投稿IDがb375ad62efd64c11d032の情報を例にします。
 
@@ -11,6 +13,8 @@ QiitaのWebAPIでは、xx分前の情報かわかるような項目がすでに�
 [https://qiita.com/api/v1/items/b375ad62efd64c11d032](https://qiita.com/api/v1/items/b375ad62efd64c11d032)
 
 にアクセスすると、JSON形式の値が返ってきます。
+
+![](../../../image/introduceJSLibrary-moment-QiitaWebAPI01.png)
 
 このデータの以下の項目がそれぞれxx分前の情報に該当します。
 
@@ -29,10 +33,9 @@ QiitaのWebAPIでは、xx分前の情報かわかるような項目がすでに�
 以下サンプルアプリでは、上記2つのうち、作成日である created_at の項目を参照することにします。
 
 
+## まずは投稿情報の作成日を画面に表示する
 
-## 投稿情報の作成日を画面に表示する
-
-これまで作ってきたアプリケーションをベースにまずは投稿情報の作成日を画面に表示する機能の実装を行います。。app.js、qiita.jsは基本的には変更ないので、コードだけ以下記載します。
+これまで作ってきたアプリケーションをベースにまずは投稿情報の作成日を画面に表示する機能の実装を行います。app.js、qiita.jsは基本的には変更ないので、コードだけ以下記載します。
 
 ### app.js
 
@@ -221,3 +224,49 @@ exports.actInd = {
 ### Android
 
 ![Android](../../../image/introduceJSLibrary-moment-android01.png)
+
+## Moment.jsを使って投稿情報の作成日を任意の形式に変更する
+
+投稿情報の作成日を画面に表示する機能を実装したので、今度はMoment.jsを使って日付の表示方法を変更します。
+
+修正するのは、mainWindow.jsのcreateRows関数の所だけです
+
+```javascript
+// 一部分だけ抜粋
+function createRows(items){
+	var rows = [],_i,_len,style = require("style"),row,textLabel,createdTimeLabel,iconImage,moment = require("moment"),momentja = require("momentja");   // (1)
+	for (_i = 0, _len = items.length; _i < _len; _i++) {
+		  row = Ti.UI.createTableViewRow(style.row);
+		  textLabel = Ti.UI.createLabel(style.textLabel);
+          createdTimeLabel = Ti.UI.createLabel(style.createdTimeLabel);
+          createdTimeLabel.text = moment(items[_i].created_at).fromNow(); // (2)
+		  iconImage = Ti.UI.createImageView(style.iconImage);
+		  iconImage.image = items[_i].user.profile_image_url;
+		  textLabel.text = items[_i].title;
+		  row.add(textLabel);
+		  row.add(iconImage);
+		  row.add(createdTimeLabel);
+		  rows.push(row);
+	}
+	return rows;
+};
+```
+1. Moment.js＆日本語化表示のために、必要なファイルの読み込みを行う記述を追加します
+2. QiitaのWebAPIの投稿情報が格納されてれるitems[_i].created_atの日付データを変換するために、moment()の引数にitems[_i].created_atを渡します。
+
+## 実行結果
+
+iPhone、Androidでの実行結果は以下のようになります。
+
+### iPhone
+
+![iPhone](../../../image/introduceJSLibrary-moment-iphone02.png)
+
+### Android
+
+![Android](../../../image/introduceJSLibrary-moment-android02.png)
+
+
+Moment.jsの公式サイトにある利用方法のドキュメントは英語のみですが表記方法のサンプルがいくつか紹介されてるので、一読するのをオススメします。
+
+[http://momentjs.com/docs/#/displaying/](http://momentjs.com/docs/#/displaying/)
