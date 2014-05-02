@@ -44,7 +44,6 @@
 - [手軽に使えて開発効率があがるJavaScriptライブラリの紹介](TitaniumClassicAdvance/introduceJSLibrary/README.md)
 - [日付処理を便利に行えるMoment.js](TitaniumClassicAdvance/introduceJSLibrary/moment/README.md)
     - [QiitaのWebAPIと連携させるアプリでMoment.jsを使う](TitaniumClassicAdvance/introduceJSLibrary/moment/useMomentjs.md)
-    - [更新日の差分を取得する](TitaniumClassicAdvance/introduceJSLibrary/README.md)
 - [配列操作を便利に行えるUnderscore.js](TitaniumClassicAdvance/introduceJSLibrary/underscore/README.md)
     - [配列から特定のユーザだけ抽出する](TitaniumClassicAdvance/introduceJSLibrary/README.md)
     - [該当する条件の投稿情報だけ抽出する](TitaniumClassicAdvance/introduceJSLibrary/README.md)
