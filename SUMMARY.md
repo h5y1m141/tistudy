@@ -35,7 +35,8 @@
     - [データ取得処理も別ファイルにする](TitaniumClassicAdvance/fileSeparate/defineModel.md)    
 - [TableViewを一工夫して利用する](TitaniumClassicAdvance/tableViewTips/README.md)
     - [引っ張って更新処理を実装する](TitaniumClassicAdvance/tableViewTips/pullToRefresh.md)
-    - [スクロールしたら追加の情報を読み込む](TitaniumClassicAdvance/tableViewTips/addAnotherRows.md)
+    - [スクロールしたら追加の情報を読み込む:アイデア編](TitaniumClassicAdvance/tableViewTips/addAnotherRowsIdea.md)
+    - [スクロールしたら追加の情報を読み込む:実装編](TitaniumClassicAdvance/tableViewTips/addAnotherRowsImplement.md)    
     - [メニュー一覧→サブメニューを展開するようなユーザインタフェースを実現する方法](TitaniumClassicAdvance/tableViewTips/collapse-or-expand-menu.md)
     <!-- - [区切り線を無くす方法](TitaniumClassicAdvance/tableViewTips/no-separator.md) -->
     <!-- - [微妙な明度差のグラデーションを活用](TitaniumClassicAdvance/tableViewTips/tableview-gradient-sample.md) -->
