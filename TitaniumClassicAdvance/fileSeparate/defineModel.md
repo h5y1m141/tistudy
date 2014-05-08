@@ -27,16 +27,9 @@ Resources直下に、qiita.jsというファイルを新規に作成します。
 ```
 
 
-それぞれの役割を以下のようになります。
+それぞれの役割を図にまとめると以下のようになります。
 
-- app.js
-    - 起動時に必要なファイル群を読み込んで最低限の処理を実施
-- qiita.js
-    - あらかじめローカルに準備したsample.jsonを読み込んだり、少し機能を拡張してQiitaのWebAPIから最新の投稿情報を取得する処理を実装
-- mainWindow.js
-    - Ti.UI.TableViewなどの必要な要素を配置したTi.UI.Windowを生成するファイル
-- style.js
-    - Ti.UIのそれぞれの要素の色、幅、高さなどの設定値を保持してるファイル
+![](../../image/TitaniumClassicAdvance-fileSeparate-defineModel-overview.png)
 
 
 先ほど作成したstyle.js、mainWindow.jsはそのまま活用します。app.jsからデータ取得する部分を切り出して、その処理をqiita.jsに振り分けますが、以下にコードを示しながら順番に解説します。
