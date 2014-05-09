@@ -46,7 +46,6 @@
 - [日付処理を便利に行えるMoment.js](TitaniumClassicAdvance/introduceJSLibrary/moment/README.md)
     - [QiitaのWebAPIと連携させるアプリでMoment.jsを使う](TitaniumClassicAdvance/introduceJSLibrary/moment/useMomentjs.md)
 - [配列操作を便利に行えるUnderscore.js](TitaniumClassicAdvance/introduceJSLibrary/underscore/README.md)
-    - [配列から特定のユーザだけ抽出する](TitaniumClassicAdvance/introduceJSLibrary/README.md)
-    - [該当する条件の投稿情報だけ抽出する](TitaniumClassicAdvance/introduceJSLibrary/README.md)
+    - [QiitaのWeb APIから取得したデータを投稿日別にグループ化して表示](TitaniumClassicAdvance/introduceJSLibrary/underscore/useUnderscore.md)
 - [Titanium Classic環境からAlloyに移行する](Alloy/README.md)
 - [はじめてのAlloy](Alloy/firstStepAlloy/README.md)
